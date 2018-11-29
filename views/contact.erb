@@ -18,11 +18,11 @@
     <% @contact.addresses.each_with_index do |address_hash, index|   %>
     <ul>
 
-      <li> Address <%= (index+1) %> : <%= address_hash[:address_one] %>, <%= address_hash[:address_two] %>, <%= address_hash[:city] %>, <%= address_hash[:state] %>, <%= address_hash[:postal_code] %></li>
+      <li id="<%= index %>"> <a href = "/contact/<%= @contact.contact_id %>/<%= index %>">X</a> Address <%= (index+1) %> : <%= address_hash[:address_one] %>, <%= address_hash[:address_two] %>, <%= address_hash[:city] %>, <%= address_hash[:state] %>, <%= address_hash[:postal_code] %></li>
 
     </ul>
     <% end %>
-  
+
   </div>
 
 </div>

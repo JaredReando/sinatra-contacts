@@ -40,3 +40,19 @@ post ('/contact/:id') do
   @contact.add_address(params)
   (erb :contact)
 end
+
+get ('/contact/:contact_id/:address_delete_id') do
+    @contact = Contact.find_contact(params[:contact_id].to_i)
+    @full_name = @contact.full_name
+    @first_name = @contact.first_name
+    @last_name = @contact.last_name
+    @job_title = @contact.job_title
+    @company = @contact.company
+    @contact_type = @contact.contact_type
+    @contact.add_address(params)
+    address_id = params[:address_delete_id].to_i
+    @contact.delete_address(address_id)
+
+    (erb :contact)
+
+  end

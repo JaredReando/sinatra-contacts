@@ -35,6 +35,11 @@
       @addresses.push(attributes)
     end
 
+    def delete_address(id)
+      @addresses.delete_at(id)
+    end
+
+
   end
 
 
