@@ -19,12 +19,24 @@ post ('/') do
 end
 
 get ('/contact/:id') do
-  contact = Contact.find_contact(params[:id].to_i)
-  @full_name = contact.full_name
-  @first_name = contact.first_name
-  @last_name = contact.last_name
-  @job_title = contact.job_title
-  @company = contact.company
-  @contact_type = contact.contact_type
+  @contact = Contact.find_contact(params[:id].to_i)
+  @full_name = @contact.full_name
+  @first_name = @contact.first_name
+  @last_name = @contact.last_name
+  @job_title = @contact.job_title
+  @company = @contact.company
+  @contact_type = @contact.contact_type
+  (erb :contact)
+end
+
+post ('/contact/:id') do
+  @contact = Contact.find_contact(params[:id].to_i)
+  @full_name = @contact.full_name
+  @first_name = @contact.first_name
+  @last_name = @contact.last_name
+  @job_title = @contact.job_title
+  @company = @contact.company
+  @contact_type = @contact.contact_type
+  @contact.add_address(params)
   (erb :contact)
 end

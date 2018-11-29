@@ -11,7 +11,7 @@
       @@contact_list[contact_id]
     end
 
-    attr_reader :first_name, :last_name, :job_title, :company, :contact_type, :contact_id
+    attr_reader :first_name, :last_name, :job_title, :company, :contact_type, :contact_id, :addresses
 
     def initialize(attributes)
       ## also @@frist_name = attributes.fetch(:first_name)
@@ -21,6 +21,7 @@
       @company = attributes[:company]
       @contact_type = attributes[:contact_type]
       @contact_id = @@contact_list.length
+      @addresses = []
 
       @@contact_list.push(self)
 
@@ -30,6 +31,9 @@
       @first_name + " " + @last_name
     end
 
+    def add_address(attributes)
+      @addresses.push(attributes)
+    end
 
   end
 
