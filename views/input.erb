@@ -6,17 +6,17 @@
   <br>
   Last name:<br>
   <input type="text" name="last_name" value="">
-  <br><br>
+  <br>
   Job title:<br>
   <input type="text" name="job_title" value="">
-  <br><br>
+  <br>
   Company:<br>
   <input type="text" name="company" value="">
-  <br><br>
+  <br>
   Contact Type:<br>
   <input type="text" name="contact_type" value="">
   <br><br>
-  <input type="submit" value="Submit">
+  <input class="btn-success" type="submit" value="Submit">
 </form>
 
 
@@ -24,7 +24,7 @@
   <ul>
 
     <% @contact_list.each do |contact|   %>
-    <li id="<%= contact.contact_id %>"> <a href="/contact/<%= contact.contact_id %>">      <%= contact.full_name %> </a></li>
+    <li id="<%= contact.contact_id %>"> <a href="/delete/<%= contact.contact_id %>">[delete]</a><a href="/contact/<%= contact.contact_id %>"> <%= contact.full_name %> </a></li>
     <% end %>
 
 

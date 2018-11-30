@@ -1,14 +1,14 @@
-<h1>Contact Details for <%= @full_name %>:</h1>
+<h1><%= @contact.full_name %>:</h1>
 
 <div class="row">
   <div class="col-md-6">
 
     <ol>
-      <li>First Name: <%= @first_name %></li>
-      <li>Last Name: <%= @last_name %></li>
-      <li>Job Title: <%= @job_title %></li>
-      <li>Company: <%= @company %></li>
-      <li>Contact Type: <%= @contact_type %></li>
+      <li><b>First Name:</b> <%= @contact.first_name %></li>
+      <li><b>Last Name:</b> <%= @contact.last_name %></li>
+      <li><b>Job Title:</b> <%= @contact.job_title %></li>
+      <li><b>Company</b>: <%= @contact.company %></li>
+      <li><b>Contact Type:</b> <%= @contact.contact_type %></li>
     </ol>
   </div>
 
@@ -44,3 +44,5 @@
     <br><br>
     <input type="submit" value="Submit">
   </form>
+
+  <a href = "/">Return to Contact List.</a>

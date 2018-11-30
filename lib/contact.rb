@@ -11,7 +11,21 @@
       @@contact_list[contact_id]
     end
 
-    attr_reader :first_name, :last_name, :job_title, :company, :contact_type, :contact_id, :addresses
+    def self.delete_contact (contact_id)
+      @@contact_list.delete_at(contact_id)
+      self.assign_contact_ids
+    end
+
+    def self.assign_contact_ids
+      if(@@contact_list != [])
+        @@contact_list.each_with_index do |contact, index|
+          contact.contact_id = index
+        end
+      end
+    end
+
+    attr_reader :first_name, :last_name, :job_title, :company, :contact_type, :addresses
+    attr_accessor :contact_id
 
     def initialize(attributes)
       ## also @@frist_name = attributes.fetch(:first_name)
@@ -41,6 +55,5 @@
 
 
   end
-
 
 # end
